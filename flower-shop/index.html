@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Цветочная лавка</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <img src="public/logo.svg" alt="Логотип" class="logo" />
+      <span>Цветочная лавка</span>
+    </div>
+    <nav>
+      <a href="#catalog">Каталог</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <button id="cartButton" class="cart-btn" aria-label="Корзина">
+      🛒 <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Свежие цветы с доставкой в день заказа</h1>
+        <p>Соберём букет под ваш бюджет и настроение. Быстро, красиво, с любовью.</p>
+        <a href="#catalog" class="btn-primary">Выбрать букет</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60" alt="Букет цветов" class="hero-image"/>
+    </section>
+
+    <section id="catalog" class="catalog">
+      <h2>Популярные букеты</h2>
+      <div id="productGrid" class="grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>О нас</h2>
+      <p>Мы — небольшая локальная студия флористики. Работаем с 2016 года, любим необычные сочетания и стойкие цветы.</p>
+    </section>
+
+    <section id="contacts" class="contacts">
+      <h2>Контакты</h2>
+      <ul>
+        <li>Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a></li>
+        <li>WhatsApp/Telegram: <a href="https://t.me/example" target="_blank" rel="noopener">@example</a></li>
+        <li>Адрес: ул. Цветочная, 10</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Корзина</h3>
+      <button id="closeCart" class="icon-btn" aria-label="Закрыть">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="totals">
+        <span>Итого:</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <input name="name" placeholder="Имя" required />
+        <input name="phone" placeholder="Телефон" required />
+        <input name="address" placeholder="Адрес доставки" required />
+        <button type="submit" class="btn-primary w-full">Оформить заказ</button>
+        <p id="orderMessage" class="order-message" role="status"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
